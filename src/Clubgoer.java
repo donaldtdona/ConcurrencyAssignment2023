@@ -12,6 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class Clubgoer extends Thread {
 	
 	public static ClubGrid club; //shared club
+	private AtomicBoolean pauseFlag;
 
 	GridBlock currentBlock;
 	private Random rand;
@@ -25,7 +26,7 @@ public class Clubgoer extends Thread {
 	private int ID; //thread ID 
 
 	
-	Clubgoer( int ID,  PeopleLocation loc,  int speed) {
+	Clubgoer( int ID,  PeopleLocation loc,  int speed, AtomicBoolean pauseFlag) {
 		this.ID=ID;
 		movingSpeed=speed; //range of speeds for customers
 		this.myLocation = loc; //for easy lookups
@@ -33,6 +34,7 @@ public class Clubgoer extends Thread {
 		thirsty=true; //thirsty when arrive
 		wantToLeave=false;	 //want to stay when arrive
 		rand=new Random();
+		this.pauseFlag = pauseFlag;
 	}
 	
 	//getter
@@ -53,7 +55,14 @@ public class Clubgoer extends Thread {
 
 	//check to see if user pressed pause button
 	private void checkPause() {
-		// THIS DOES NOTHING - MUST BE FIXED  	
+		// THIS DOES NOTHING - MUST BE FIXED 
+		while(pauseFlag.get()){
+			try{
+				Thread.sleep(100); //sleep and check again
+			}catch(InterruptedException e){
+				System.out.println("Something is wrong");
+			}
+		}
         
     }
 	private void startSim() {

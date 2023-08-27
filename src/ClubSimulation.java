@@ -28,6 +28,7 @@ public class ClubSimulation {
 	static ClubView clubView; //threaded panel to display terrain
 	static ClubGrid clubGrid; // club grid
 	static CounterDisplay counterDisplay ; //threaded display of counters
+	private static AtomicBoolean pauseFlag = new AtomicBoolean(false);
 	
 	private static int maxWait=1200; //for the slowest customer
 	private static int minWait=500; //for the fastest cutomer
@@ -87,7 +88,18 @@ public class ClubSimulation {
 			// add the listener to the jbutton to handle the "pressed" event
 			pauseB.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent e) {
-		    		// THIS DOES NOTHING - MUST BE FIXED  	
+		    		// THIS DOES NOTHING - MUST BE FIXED 
+					if(pauseFlag.get()){
+						pauseFlag.set(false);
+						pauseB.setText("Pause");
+					}else{
+						pauseFlag.set(true);
+						pauseB.setText("Resume");
+						//Notify all Clubgoers threads to check the pause state
+						synchronized(patrons){
+							patrons.notifyAll();
+						}
+					}
 		      }
 		    });
 			
@@ -138,7 +150,7 @@ public class ClubSimulation {
         for (int i=0;i<noClubgoers;i++) {
         		peopleLocations[i]=new PeopleLocation(i);
         		int movingSpeed=(int)(Math.random() * (maxWait-minWait)+minWait); //range of speeds for customers
-    			patrons[i] = new Clubgoer(i,peopleLocations[i],movingSpeed);
+    			patrons[i] = new Clubgoer(i,peopleLocations[i],movingSpeed,pauseFlag);
     		}
 		           
 		setupGUI(frameX, frameY,exit);  //Start Panel thread - for drawing animation
