@@ -8,7 +8,7 @@ BINDIR=bin
 $(BINDIR)/%.class:$(SRCDIR)/%.java
 	$(JAVAC) -d $(BINDIR)/ -cp $(BINDIR) $<
 	
-CLASSES = WordDictionary.class Score.class ScoreUpdater.class FallingWord.class CatchWord.class WordMover.class GamePanel.class TypingTutorApp.class
+CLASSES = GridBlock.class PeopleCounter.class PeopleLocation.class CounterDisplay.class ClubGrid.class ClubView.class Clubgoer.class ClubSimulation.class
 
 CLASS_FILES=$(CLASSES:%.class=$(BINDIR)/%.class)
 
@@ -18,4 +18,4 @@ clean:
 	rm $(BINDIR)/*.class
 	
 run:$(CLASS_FILES)
-	java -cp bin TypingTutorApp
+	java -cp bin ClubSimulation
