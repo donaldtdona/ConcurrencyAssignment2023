@@ -1,0 +1,110 @@
+commit 15341abaa36751d78436970917ed85579059cd0a
+Merge: f79a110 f3880c4
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 20:55:06 2023 +0200
+
+    Merge branch 'main' of https://github.com/donaldtdona/ConcurrencyAssignment2023 into main
+    pulling the uptated readme file
+
+commit f79a11012bd61098560780a04515c5e2999245b4
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 20:53:08 2023 +0200
+
+    classed added to bin
+
+commit f3880c4ff39ad5a1beff91e2a2c7b56831cc440e
+Author: donaldtdona <58192273+donaldtdona@users.noreply.github.com>
+Date:   Mon Aug 28 20:42:01 2023 +0200
+
+    Update README.md
+    
+    updating Readme file
+
+commit 3de319ac6ed9204639754e826d16cacb65f742a7
+Merge: a1e5d17 d2ed5f3
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 19:05:14 2023 +0200
+
+    Merge branch 'main' of https://github.com/donaldtdona/ConcurrencyAssignment2023 into main
+    readme file was updated and a report file was adde
+
+commit a1e5d17e3c2f80f72719d9f47907f90fd6ac22b3
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 19:03:17 2023 +0200
+
+    report added
+
+commit d2ed5f32a53dad2f2930a75b0278c84f4a13138b
+Author: donaldtdona <58192273+donaldtdona@users.noreply.github.com>
+Date:   Mon Aug 28 18:36:53 2023 +0200
+
+    Update README.md
+    
+    updating makefile
+
+commit 76d57e07d8b210239b0cacd431ac5a76567e65ab
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 18:31:38 2023 +0200
+
+    readme file updated
+
+commit 7da4d7c20eb65f6161276cb029cb054af1ce2920
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 18:21:54 2023 +0200
+
+    modified clubgrid class
+
+commit 2bc0e3e64e503fd55cf0c6e9d8c6efa519cbd5c7
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 16:32:18 2023 +0200
+
+    limited number of peoples in the club is resolved
+
+commit e65926f29ec167440bfa983610dcd633e9d051ab
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 11:43:35 2023 +0200
+
+    class file removed from the src directory
+
+commit 73c4a14af614652ebdaffde0ca3dc61c2b5399b6
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Mon Aug 28 11:39:11 2023 +0200
+
+    fixed ClubGrid from Thread errors
+
+commit 5c45ec0906725fa9c94fb5c90885edd2f19760dc
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Sun Aug 27 16:40:43 2023 +0200
+
+    the pause button is fixed and functioning well as needed
+
+commit 79d2cab2cbf31fca1c4d9fdae49e01e52e9e2093
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Sun Aug 27 14:59:55 2023 +0200
+
+    start button fixed, and working perfectly
+
+commit 8e82146ebbb9dd8bac952c9aa9bdc8720d8de665
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Sun Aug 27 14:33:40 2023 +0200
+
+    removed all class files from bin checking my makefile
+
+commit f4e6ed972407edc480013400e4b5abd34ab4f5be
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Fri Aug 25 09:06:40 2023 +0200
+
+    makefile added, still need to be updated
+
+commit f4e6c378f9e3b90386b45516bcffdd20167fa8eb
+Author: Donald Nzimande <donaldtdona119@gmail.com>
+Date:   Fri Aug 25 08:43:38 2023 +0200
+
+    my first commit: all files added
+    "
+
+commit 5398a9a5b5fcf6c2e9dac204f816477bdd1ae554
+Author: donaldtdona <58192273+donaldtdona@users.noreply.github.com>
+Date:   Fri Aug 25 08:31:28 2023 +0200
+
+    Initial commit
