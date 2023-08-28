@@ -79,7 +79,3 @@ To exit the program, simply close the GUI window or press the "Quit" button.
 ## Important Note
 
 This simulation involves multiple threads and graphical components. While the program aims to simulate the described behavior, it may vary based on system performance and thread execution.
-
----
-
-Feel free to customize the README file according to your needs and program details. Make sure to provide clear instructions on how to compile, run, and interact with the simulation program using the Makefile.
