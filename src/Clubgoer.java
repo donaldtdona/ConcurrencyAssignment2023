@@ -13,6 +13,8 @@ public class Clubgoer extends Thread {
 	
 	public static ClubGrid club; //shared club
 	private AtomicBoolean pauseFlag;
+	PeopleCounter tallys;
+	
 
 	GridBlock currentBlock;
 	private Random rand;
@@ -26,7 +28,7 @@ public class Clubgoer extends Thread {
 	private int ID; //thread ID 
 
 	
-	Clubgoer( int ID,  PeopleLocation loc,  int speed, AtomicBoolean pauseFlag) {
+	Clubgoer( int ID,  PeopleLocation loc,  int speed, AtomicBoolean pauseFlag,PeopleCounter tallys) {
 		this.ID=ID;
 		movingSpeed=speed; //range of speeds for customers
 		this.myLocation = loc; //for easy lookups
@@ -35,6 +37,7 @@ public class Clubgoer extends Thread {
 		wantToLeave=false;	 //want to stay when arrive
 		rand=new Random();
 		this.pauseFlag = pauseFlag;
+		this.tallys = tallys;
 	}
 	
 	//getter
@@ -66,7 +69,14 @@ public class Clubgoer extends Thread {
         
     }
 	private void startSim() {
-		// THIS DOES NOTHING - MUST BE FIXED  	
+		// THIS DOES NOTHING - MUST BE FIXED
+		while(!inRoom && tallys.overCapacity()){
+			try{
+				Thread.sleep(100); //sleep and check again
+			}catch(InterruptedException e){
+				System.out.println("Something is wrong");
+			}
+		}
         
     }
 	
@@ -81,7 +91,14 @@ public class Clubgoer extends Thread {
 	//--------------------------------------------------------
 	//DO NOT CHANGE THE CODE BELOW HERE - it is not necessary
 	//clubgoer enters club
-	public void enterClub() throws InterruptedException {
+	public synchronized void enterClub() throws InterruptedException {
+		while(!inRoom && tallys.overCapacity()){
+			try{
+				Thread.sleep(100); //sleep and check again
+			}catch(InterruptedException e){
+				System.out.println("Something is wrong");
+			}
+		}
 		currentBlock = club.enterClub(myLocation);  //enter through entrance
 		inRoom=true;
 		System.out.println("Thread "+this.ID + " entered club at position: " + currentBlock.getX()  + " " +currentBlock.getY() );
