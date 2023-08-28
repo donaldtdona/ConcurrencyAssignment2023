@@ -8,10 +8,6 @@ Certainly, here's an updated README file that includes instructions on using the
 
 This is a multi-threaded simulation program that simulates a club environment where patrons interact with various constraints. The simulation enforces rules such as maximum patron limits, waiting queues, and entrance access. The program is implemented in Java and utilizes multiple threads to achieve the simulation.
 
-## Prerequisites
-
-Before running the program, you need to have Java JDK installed on your system. If you don't have it already, you can download and install it from the official website: [Java SE Downloads](https://www.oracle.com/java/technologies/javase-downloads.html)
-
 ## Compiling and Running the Program
 
 ### Using the Makefile (Recommended)
@@ -31,14 +27,20 @@ Before running the program, you need to have Java JDK installed on your system. 
    Open a terminal or command prompt and navigate to the root directory of the program. Use the following command to compile the program:
 
    ```bash
-   javac -d bin src/*.java
+   make
    ```
 
 2. **Run the Program:**
    After successful compilation, use the following command to run the program:
 
    ```bash
-   java -cp bin ClubSimulation
+   make run
+   ```
+3. **Run the Program with different arguments:**
+   After successful compilation, use the following command to run the program on a bigger grid(20x20), 50 noClubgoers and 15 people allowed inside the club:
+
+   ```bash
+   make run
    ```
 
    The program will start running, and a graphical user interface (GUI) window will appear, showing the simulation animation.
