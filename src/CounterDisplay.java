@@ -12,12 +12,14 @@ public class CounterDisplay  implements Runnable {
 	JLabel waiting;
 	JLabel inside;
 	JLabel left;
+	int noClubgoers;
 		
-	CounterDisplay(JLabel w, JLabel i, JLabel l, PeopleCounter score) {
+	CounterDisplay(JLabel w, JLabel i, JLabel l, PeopleCounter score,int noClubgoers) {
         this.waiting=w;
         this.inside = i;
         this.left = l;
         this.score=score;
+		this.noClubgoers = noClubgoers;
     }
 	
 	public void run() { //this thread just updates the display of the counters
@@ -31,7 +33,7 @@ public class CounterDisplay  implements Runnable {
         	}
         	else inside.setForeground(Color.BLACK);
         	inside.setText("Inside: " + score.getInside() + "    "); 
-            waiting.setText("Waiting:" +  score.getWaiting()+ "    " );
+            waiting.setText("Waiting:" +  (noClubgoers-score.getInside()-score.getLeft())+ "    " );
             left.setText("Left:" + score.getLeft()+ "    " ); 
         }
     }
